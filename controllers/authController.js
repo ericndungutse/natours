@@ -26,7 +26,6 @@ const createAndSendToken = (user, statusCode, res) => {
     httpOnly: true,
   };
 
-  console.log(process.env.NODE_ENV.trim());
   if (process.env.NODE_ENV.trim() === 'production') cookieOptions.secure = true;
   // JWt name of the cookie, Token: Value, Options
   res.cookie('jwt', token, cookieOptions);
@@ -186,7 +185,6 @@ exports.forgotPassword = catchAsync(async (req, res, next) => {
   } catch (err) {
     user.passwordResetToken = undefined;
     user.passwordResetExpires = undefined;
-    console.log(err);
 
     user.save({ validateBeforeSave: false });
 

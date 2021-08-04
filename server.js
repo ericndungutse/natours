@@ -3,7 +3,7 @@ const dotenv = require('dotenv');
 
 // HANDLING UNDEFINED VARIABLES
 process.on('uncaughtException', (err) => {
-  console.log(err.message.name, err.message);
+  console.log(err.name, err.message);
   console.log('UNCOUGHT EXCEPTION! Shutting down...');
   process.exit(1);
 });

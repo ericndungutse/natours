@@ -35,6 +35,7 @@ export const logout = async (email, password) => {
       location.assign('/');
     }
   } catch (err) {
+    console.log(err);
     showAlert('error', err.response.data.message);
   }
 };

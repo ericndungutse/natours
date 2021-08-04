@@ -215,7 +215,6 @@ exports.getToursWithin = catchAsync(async (req, res, next) => {
 // });
 
 // exports.updateTour = catchAsync(async (req, res, next) => {
-//   console.log(req.body);
 //   const tour = await Tour.findByIdAndUpdate(req.params.id, req.body, {
 //     new: true,
 //     runValidators: true,
