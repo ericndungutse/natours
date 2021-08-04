@@ -53,17 +53,17 @@ const userSchema = new mongoose.Schema({
   },
 });
 
-userSchema.pre('save', async function (next) {
-  // CHECK IF PASSWORD WAS MODIFIED
-  // IF NO, Return AND GO OVER
-  if (!this.isModified('password')) return next();
+// userSchema.pre('save', async function (next) {
+//   // CHECK IF PASSWORD WAS MODIFIED
+//   // IF NO, Return AND GO OVER
+//   if (!this.isModified('password')) return next();
 
-  // IF YES HASH THE PASSWORD
-  this.password = await bcrypt.hash(this.password, 12);
-  this.passwordConfirm = undefined;
+//   // IF YES HASH THE PASSWORD
+//   this.password = await bcrypt.hash(this.password, 12);
+//   this.passwordConfirm = undefined;
 
-  next();
-});
+//   next();
+// });
 
 userSchema.pre('save', async function (next) {
   if (!this.isModified('password') || this.isNew) return next();

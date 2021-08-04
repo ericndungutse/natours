@@ -11,15 +11,30 @@ process.on('uncaughtException', (err) => {
 dotenv.config({ path: './config.env' });
 const app = require('./app');
 
+const DB = process.env.REMOTEDATABASE.replace(
+  '<PASSWORD>',
+  process.env.REMOTEDBPASSWORD
+);
+
 // DABABASE CONNECTION
 mongoose
-  .connect(process.env.LOCAL_DATABASE, {
+  .connect(DB, {
     useNewUrlParser: true,
     useCreateIndex: true,
     useFindAndModify: false,
     useUnifiedTopology: true,
   })
   .then((con) => console.log('Database Connection Successful!'));
+
+// LOCAL DABABASE CONNECTION
+// mongoose
+//   .connect(process.env.LOCAL_DATABASE, {
+//     useNewUrlParser: true,
+//     useCreateIndex: true,
+//     useFindAndModify: false,
+//     useUnifiedTopology: true,
+//   })
+//   .then((con) => console.log('Database Connection Successful!'));
 
 //START THE SERVER
 const port = process.env.PORT || 3000;
