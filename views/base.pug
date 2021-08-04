@@ -8,7 +8,6 @@ html(lang="en")
       link(rel="shortcut icon", href="/img/favicon.png", type="image/x-icon")
       link( href="https://fonts.googleapis.com/css?family=Lato:300,300i,700"
         rel="stylesheet")
-      script(src='https://js.stripe.com/v3/')
 
       //- #{} Interpolation syntax
       title Natours | #{title}
@@ -23,6 +22,7 @@ html(lang="en")
     // FOOTER
     include _footer
 
+    script(src='https://js.stripe.com/v3/')
     script(src='/js/bundle.js')
     //- script(src="/js/mapbox.js")
     //- script(src="/js/login.js") 
