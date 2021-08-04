@@ -18,7 +18,7 @@ const reviewRouter = require('./routes/review.Routes');
 const viewRouter = require('./routes/view.routes');
 const bookingRouter = require('./routes/booking.Routes');
 
-// Start Express App
+// Start Express Application
 const app = express();
 
 // Template engine set up
